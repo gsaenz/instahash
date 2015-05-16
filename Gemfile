@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Gema que permite la interacción entre el servidor y la API de Facebook
+gem 'fb_graph2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

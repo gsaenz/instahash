@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'get_albums/home'
-
     get 'get_albums/home'
   
   # The priority is based upon order of creation: first created -> highest priority.
