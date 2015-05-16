@@ -1,0 +1,2 @@
+class GetAlbumsController < ApplicationController
+end
