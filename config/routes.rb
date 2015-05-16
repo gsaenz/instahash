@@ -1,6 +1,10 @@
 
 Rails.application.routes.draw do
 
+  get 'tags/create'
+
+  get 'tags/destroy'
+
   get 'photos/index'
 
   namespace :api, path: '/api' do
