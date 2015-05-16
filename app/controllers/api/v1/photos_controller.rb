@@ -19,7 +19,12 @@ class Api::V1::PhotosController < Api::V1::ApplicationController
 					else
 						matches = []
 					end
-				   photos.push({:id => photo.id, :picture => photo.picture, :name => photo.name, :link => photo.link, :tags => matches})
+					tag = Api::V1::Tag.where(photo_id:photo.id)
+					local_tags = []
+					tag.each do |t|
+						local_tags.push(t.tag)
+					end
+				   photos.push({:id => photo.id, :picture => photo.picture, :name => photo.name, :link => photo.link, :tags => matches, :local_tags => local_tags})
 				end
 				status_code = 200
 				return {:data => photos, :status_code => status_code}
