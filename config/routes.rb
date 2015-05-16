@@ -1,14 +1,12 @@
-require 'api_constraints'
 
 Rails.application.routes.draw do
 
-  namespace :api, defaults: { format: :json },
-                              constraints: { subdomain: 'api' }, path: '/'  do
-
-     scope module: :v1,
-                     constraints: ApiConstraints.new(version: 1, default: true) do
-        # We are going to list our resources here
-     
+  namespace :api, path: '/api' do
+    api_version(:module => "V1", :header => {:name => "Accept",
+                                             :value => "application/vnd.instahash.com+json; version=1"},
+                                             :defaults => {:format => :json},
+                                             :default => true) do
+         resources :albums, except: [:new,:edit]
     end
   end
 end
