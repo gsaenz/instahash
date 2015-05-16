@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class GetAlbumsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get home" do
+    get :home
+    assert_response :success
+  end
+
 end
