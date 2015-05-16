@@ -7,7 +7,7 @@ describe Api::V1::TagsController do
 
    describe "GET #create" do
     before(:each) do 
-      get :create, format: :json, photo_id: "10150836244595317", tag:"#Alalala" 
+      get :create, format: :json
     end
 
     it "responds with 201" do 

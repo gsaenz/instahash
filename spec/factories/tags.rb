@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :tag do
-    photo_id 1
+    photo_id "MyString"
 tag "MyString"
   end
 

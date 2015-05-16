@@ -1,11 +1,7 @@
 
 Rails.application.routes.draw do
 
-  get 'tags/create'
-
-  get 'tags/destroy'
-
-  get 'photos/index'
+ 
 
   namespace :api, path: '/api' do
     api_version(:module => "V1", :header => {:name => "Accept",
@@ -14,6 +10,8 @@ Rails.application.routes.draw do
                                              :default => true) do
          resources :albums, except: [:new,:edit]
          resources :photos, except: [:new,:edit]
+         post "tags/create"    => "tags#create"
+         delete "tags/destroy"    => "tags#destroy"
     end
   end
 end
