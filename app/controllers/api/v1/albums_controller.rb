@@ -16,8 +16,7 @@ class Api::V1::AlbumsController < Api::V1::BaseController
 	private
 		def auth
 			begin
-				user = FbGraph2::User.new(params[:user_id]).authenticate(params[:access_token])
-				user.fetch
+				user = Api::V1::Fb.new().getUser(params[:user_id], params[:access_token])
 				status_code = 200
 				return {:data => user, :status_code => status_code}
 			rescue => ex
